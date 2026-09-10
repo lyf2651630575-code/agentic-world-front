@@ -3,18 +3,18 @@
   --bg-1: #10151b;
   --bg-2: #161c24;
   --bg-3: #1c2430;
-  --line: rgba(120, 160, 140, 0.18);
-  --line-strong: rgba(140, 190, 160, 0.35);
-  --text: #d7e0d9;
-  --text-dim: #8a968c;
-  --text-faint: #5c675f;
+  --line: rgba(120, 160, 140, 0.22);
+  --line-strong: rgba(140, 190, 160, 0.42);
+  --text: #e8eee9;
+  --text-dim: #b7c4ba;
+  --text-faint: #8f9d93;
   --accent: #3d9b6a;
-  --accent-2: #c4a35a;
+  --accent-2: #d0b46a;
   --accent-warn: #c47a4a;
-  --hud: #6fbf8f;
+  --hud: #7dcca0;
   --danger: #c45c5c;
-  --font-display: "Syne", "Segoe UI", sans-serif;
-  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-display: "Syne", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: "IBM Plex Mono", "Consolas", monospace;
   --max: 1180px;
   --nav-h: 64px;
@@ -36,8 +36,10 @@ body {
   margin: 0;
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(61, 155, 106, 0.12), transparent 55%),
     linear-gradient(180deg, #0d1217 0%, var(--bg-0) 40%, #090c0f 100%);
@@ -110,8 +112,10 @@ select {
 .brand-mark {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  line-height: 1.25;
   letter-spacing: 0.02em;
+  padding-bottom: 0.05em;
   background: linear-gradient(110deg, #e8f2ea 20%, var(--hud) 70%, var(--accent-2) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -120,7 +124,8 @@ select {
 
 .brand-sub {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--text-faint);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -129,18 +134,19 @@ select {
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15rem;
+  gap: 0.2rem;
   flex: 1;
   min-width: 0;
 }
 
 .nav a {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 0.4rem 0.65rem;
+  padding: 0.45rem 0.7rem;
   border: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
@@ -158,10 +164,11 @@ select {
 
 .status-pill {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--text-dim);
   border: 1px solid var(--line);
-  padding: 0.35rem 0.6rem;
+  padding: 0.4rem 0.65rem;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -203,7 +210,8 @@ select {
   border-top: 1px solid var(--line);
   padding: 1rem 1.25rem;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   color: var(--text-faint);
   text-align: center;
 }
@@ -217,7 +225,7 @@ select {
   align-content: center;
   gap: 1.5rem;
   padding: 2rem 0 3rem;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero::after {
@@ -263,9 +271,11 @@ select {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(2.6rem, 7vw, 4.6rem);
-  line-height: 0.95;
+  line-height: 1.18;
   letter-spacing: -0.02em;
   max-width: 14ch;
+  padding: 0.12em 0 0.2em;
+  overflow: visible;
   background: linear-gradient(120deg, #f0f5f1 10%, var(--hud) 55%, var(--accent-2) 95%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -285,9 +295,11 @@ select {
 }
 
 .hero-lead {
-  max-width: 36rem;
+  max-width: 38rem;
   color: var(--text-dim);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.7;
   animation: brand-in 0.9s ease 0.12s both;
 }
 
@@ -303,9 +315,10 @@ select {
   flex-wrap: wrap;
   gap: 1rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-faint);
-  letter-spacing: 0.04em;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
   animation: brand-in 0.9s ease 0.3s both;
 }
 
@@ -338,7 +351,8 @@ select {
 
 .entry-link .k {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--accent-2);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -349,14 +363,16 @@ select {
   margin-top: 0.35rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text);
 }
 
 .entry-link .d {
   display: block;
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.55;
   color: var(--text-dim);
 }
 
@@ -385,12 +401,15 @@ select {
   margin: 0.35rem 0 0;
   color: var(--text-dim);
   max-width: 40rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .crumb {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--text-faint);
   margin-bottom: 0.5rem;
   letter-spacing: 0.04em;
@@ -434,8 +453,9 @@ select {
 .side-nav h3 {
   margin: 0 0 0.55rem;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-faint);
 }
@@ -458,9 +478,10 @@ select {
   background: transparent;
   border: 1px solid transparent;
   color: var(--text-dim);
-  padding: 0.4rem 0.45rem;
+  padding: 0.45rem 0.5rem;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
+  font-weight: 400;
 }
 
 .side-nav button:hover,
@@ -478,7 +499,8 @@ select {
 
 .side-nav .cnt {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--text-faint);
 }
 
@@ -499,8 +521,9 @@ select {
 
 .field label {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-faint);
 }
@@ -525,13 +548,14 @@ select {
   border: 1px solid var(--line-strong);
   background: rgba(61, 155, 106, 0.15);
   color: var(--hud);
-  padding: 0.55rem 0.95rem;
+  padding: 0.6rem 1.05rem;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .btn:hover {
@@ -544,14 +568,15 @@ select {
 }
 
 .btn.ghost {
-  background: transparent;
-  color: var(--text-dim);
-  border-color: var(--line);
+  background: rgba(22, 28, 36, 0.85);
+  color: var(--text);
+  border-color: rgba(160, 190, 170, 0.4);
 }
 
 .btn.ghost:hover {
-  color: var(--text);
+  color: #fff;
   border-color: var(--line-strong);
+  background: rgba(36, 48, 42, 0.95);
 }
 
 .btn.warn {
@@ -595,7 +620,9 @@ select {
 .entry-row .sum {
   margin: 0.3rem 0 0;
   color: var(--text-dim);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .meta-row {
@@ -607,11 +634,12 @@ select {
 
 .chip {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.04em;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
   color: var(--text-dim);
   border: 1px solid var(--line);
-  padding: 0.15rem 0.4rem;
+  padding: 0.2rem 0.45rem;
 }
 
 .chip.layer {
@@ -626,7 +654,8 @@ select {
 
 .updated {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--text-faint);
   white-space: nowrap;
   align-self: start;
@@ -644,12 +673,16 @@ select {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  line-height: 1.15;
+  line-height: 1.25;
+  overflow: visible;
 }
 
 .article .lede {
   color: var(--text-dim);
   margin: 0 0 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .section {
@@ -661,8 +694,9 @@ select {
 .section h2 {
   margin: 0 0 0.7rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-2);
 }
@@ -721,7 +755,9 @@ select {
 .model-card .sum {
   flex: 1;
   color: var(--text-dim);
-  font-size: 0.86rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 /* ── workbench ── */
@@ -758,9 +794,10 @@ select {
   background: #080b0e;
   border: 1px solid var(--line);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  line-height: 1.45;
-  color: #a8c4b0;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #b6d0be;
   white-space: pre-wrap;
   word-break: break-word;
 }
@@ -787,22 +824,26 @@ select {
   border: 1px solid var(--line);
   background: rgba(61, 155, 106, 0.06);
   color: var(--text-dim);
-  padding: 0.65rem 0.9rem;
+  padding: 0.7rem 0.95rem;
   margin-bottom: 1rem;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 400;
 }
 
 .empty {
   padding: 2rem 1rem;
   text-align: center;
   color: var(--text-faint);
+  font-size: 0.95rem;
+  font-weight: 400;
   border: 1px dashed var(--line);
 }
 
 .loading {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 500;
   color: var(--text-dim);
   padding: 1.5rem 0;
 }
@@ -831,7 +872,9 @@ select {
 
 .guide {
   color: var(--text-dim);
-  font-size: 0.92rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
   margin: 0 0 1rem;
   max-width: 48rem;
 }
@@ -845,11 +888,12 @@ select {
 
 .tag-cloud button {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   background: transparent;
   border: 1px solid var(--line);
   color: var(--text-dim);
-  padding: 0.2rem 0.4rem;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
 }
 

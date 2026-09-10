@@ -68,7 +68,7 @@ export function ModelsPage() {
                 <h3>{e.title}</h3>
                 <p className="sum">{e.summary}</p>
                 {pts.length > 0 && (
-                  <ul style={{ margin: 0, paddingLeft: "1rem", color: "var(--text-dim)", fontSize: "0.82rem" }}>
+                  <ul style={{ margin: 0, paddingLeft: "1rem", color: "var(--text-dim)", fontSize: "0.95rem", fontWeight: 400, lineHeight: 1.55 }}>
                     {pts.map((p) => (
                       <li key={p}>{p}</li>
                     ))}
