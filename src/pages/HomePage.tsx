@@ -43,7 +43,7 @@ export function HomePage() {
 
   return (
     <section className="hero">
-      <div className="hero-brand">Agentic World</div>
+      <h1 className="hero-brand">Agentic World</h1>
       <p className="hero-lead">
         文化复利引擎的知识站与工作台——大模型基础、顶会方向、Harness 工程、开闭源模型卡，以及小说 / 漫剧 / 游戏 /
         金融工作流，全部来自主仓 knowledge API，真实可检索。

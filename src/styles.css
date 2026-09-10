@@ -113,9 +113,11 @@ select {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.2rem;
-  line-height: 1.25;
+  /* ≥1.25 so Syne descenders clear the line box under background-clip:text */
+  line-height: 1.35;
   letter-spacing: 0.02em;
-  padding-bottom: 0.05em;
+  padding: 0.08em 0 0.12em;
+  display: inline-block;
   background: linear-gradient(110deg, #e8f2ea 20%, var(--hud) 70%, var(--accent-2) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -268,18 +270,22 @@ select {
 }
 
 .hero-brand {
+  margin: 0;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(2.6rem, 7vw, 4.6rem);
-  line-height: 1.18;
+  /* Syne hhea ≈ 1.2em; never use background-clip:text here — it shears g/y/p */
+  line-height: 1.45;
   letter-spacing: -0.02em;
   max-width: 14ch;
-  padding: 0.12em 0 0.2em;
+  display: block;
+  padding: 0.12em 0 0.28em;
   overflow: visible;
-  background: linear-gradient(120deg, #f0f5f1 10%, var(--hud) 55%, var(--accent-2) 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #e8f2ea;
+  /* Gradient without clipping glyphs: soft directional wash via text-shadow */
+  text-shadow:
+    0.04em 0 0 rgba(125, 204, 160, 0.45),
+    0.08em 0 0 rgba(208, 180, 106, 0.28);
   animation: brand-in 0.9s ease both;
 }
 
